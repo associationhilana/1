@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فرعنا</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+    :root {
+      --primary-color: #ff7e5f;
+      --secondary-color: #feb47b;
+      --text-color: #333;
+      --background-color: #fdfdfd;
+      --accent-color: #ff9472;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #fdfdfd, #f5f5f5);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .news-meta {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .news-content p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>جمعية هيلانة للتنمية البشرية</h1>
+    
+
+    <div class="news-meta">
+    </div>
+
+    <div class="news-content">
+        <h3>جمعية هيلانة للتنمية البشرية تفتح أبوابها للجميع من قلب مدينة مراكش، في موقع مميز ينبض بالحياة والإنسانية، حيث تجدوننا في:</h3>
+        <h3> العنوان الكامل:</h3>
+        <ul>
+            <li>المملكة المغربية – مراكش</li>
+            <li>باب إيلان، طوالة هيلانة رقم 158</li>
+            <h3>هذا المقر هو القلب النابض للجمعية، والمكان الذي تنطلق منه أنشطتنا الإنسانية والخيرية إلى مختلف شرائح المجتمع، لنكون دائمًا قريبين من الناس، وداعمين لهم في كل الأوقات.</h3>
+            <h1>في جمعية هيلانة للتنمية البشرية، نؤمن بأن الخير يبدأ من مكان بسيط، لكنه يمتد أثره ليصل إلى كل من يحتاجه.
+
+            </h1>
+        </ul>
+
+    </div>
+
+    <a href="index.html" class="back-button">العودة إلى الرئيسية</a>
+  </div>
+</body>
+</html>

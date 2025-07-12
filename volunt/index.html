@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تسجيل كمتطوع - جمعية هيلانة</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+    :root {
+      --primary-color: #ff7e5f;
+      --secondary-color: #feb47b;
+      --text-color: #333;
+      --background-color: #fdfdfd;
+      --accent-color: #ff9472;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Cairo', sans-serif;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .volunteer-container {
+      position: relative;
+      max-width: 500px;
+      width: 90%;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+      text-align: center;
+      margin: 50px auto;
+      z-index: 10;
+    }
+
+    .volunteer-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      line-height: 1.7;
+      color: var(--text-color);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, select {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 8px rgba(255, 126, 95, 0.4);
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+      box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="volunteer-container">
+    <h1>سجل كمتطوع</h1>
+    <p>انضم إلينا في رحلة الخير، وساهم في إحداث فرق حقيقي في حياة الناس!</p>
+
+    <form action="https://formsubmit.co/associationhilana@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="الاسم الكامل" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+      <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+      <select name="volunteer-type" required>
+        <option value="">اختر نوع التطوع</option>
+        <option value="اللجنة الصحية">اللجنة الصحية</option>
+        <option value="اللجنة الاجتماعية">اللجنة الاجتماعية</option>
+        <option value="اللجنة القانونية">اللجنة القانونية</option>
+        <option value="لجنة العمل النسائي">لجنة العمل النسائي</option>
+        <option value="">اللجنة الفنية والثقافية</option>
+      </select>
+      <select name="volunteer-type" required>
+        <option value="">هل سبق لك الإنضمام الى جمعية</option>
+        <option value="">نعم</option>
+        <option value="">لا</option>
+      </select>
+      <select name="volunterr-type" required>
+        <option value="">هل سبق لك الإنضمام لحزب سياسي</option>
+        <option value="">نعم</option>
+        <option value="">لا</option>
+      </select>
+      <textarea name="skills" rows="4" placeholder="أخبرنا عن مهاراتك واهتماماتك..."></textarea>
+
+      <input type="hidden" name="_subject" value="تسجيل متطوع جديد">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="thankyou.html">
+
+      <button type="submit">انضم إلينا الآن</button>
+    </form>
+
+    <a href="index.html" class="back-link">العودة إلى الرئيسية</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": { "enable": true, "value_area": 800 }
+        },
+        "color": { "value": ["#ff7e5f", "#feb47b", "#ff9472"] },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff9472", "opacity": 0.4, "width": 1 },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
