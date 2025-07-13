@@ -335,6 +335,29 @@ img {
     color: var(--secondary-color);
 }
 
+/* ✅ Media query للهواتف */
+@media (max-width: 768px) {
+    .about .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .mv-item {
+        border-right: none;
+        border-bottom: 4px solid var(--primary-color);
+    }
+
+    .about-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 /* شركاؤنا */
 .partners {
     padding: 100px 0;
@@ -518,6 +541,37 @@ img {
     font-size: 0.8rem;
 }
 
+/* ✅ Media Query للهواتف */
+@media (max-width: 600px) {
+    .program-card h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .program-card p {
+        text-align: center;
+        padding: 10px 15px;
+    }
+
+    .program-link {
+        display: block;
+        text-align: center;
+    }
+
+    .read-more-btn {
+        display: block;
+        margin: 15px auto 0;
+        font-size: 0.8rem;
+    }
+
+    .programs {
+        padding: 40px 0;
+    }
+
+    .program-image {
+        height: 150px;
+    }
+}
 /* قسم الأخبار */
 .news-section {
     padding: 80px 0;
@@ -721,47 +775,86 @@ img {
 .success-stories {
     padding: 100px 0;
     background: var(--light-color);
-}
-
-.stories-slider {
+  }
+  
+  .stories-slider {
     background: white;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-}
-
-.story {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.story-image img {
+  }
+  
+  .story {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .story-image {
+    flex: 1 1 50%;
+  }
+  
+  .story-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.story-content {
+    display: block;
+  }
+  
+  .story-content {
+    flex: 1 1 50%;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.story-content h3 {
+  }
+  
+  .story-content h3 {
     color: var(--secondary-color);
     margin-bottom: 20px;
-}
-
-.story-content p {
+  }
+  
+  .story-content p {
     font-style: italic;
     margin-bottom: 20px;
     line-height: 1.8;
-}
-
-.story-content span {
+    color: var(--text-color, #222); 
+  }
+  
+  .story-content span {
     font-weight: 500;
     color: var(--primary-color);
+  }
+  
+  /* ✅ تصميم الموبايل */
+  @media (max-width: 768px) {
+    .story {
+      flex-direction: column;
+    }
+  
+    .story-image img {
+      height: auto;
+    }
+  
+    .story-content {
+      padding: 20px;
+      text-align: center;
+    }
+  }
+  
+/* المتطوعون */
+.volunteers {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    color: white;
+}
+
+.volunteers p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
 }
 
 /* المتطوعون */
