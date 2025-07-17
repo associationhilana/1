@@ -82,4 +82,45 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     loadTeam();
+
+    // ============= تأثير عد الأرقام (المضاف حديثاً) =============
+    const animateCounters = () => {
+        const counters = document.querySelectorAll('[data-count]');
+        if (!counters.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-count');
+                    const duration = 2000; // مدة العد 2 ثانية
+                    const startValue = 0;
+                    const startTime = performance.now();
+
+                    const updateCounter = (currentTime) => {
+                        const elapsedTime = currentTime - startTime;
+                        const progress = Math.min(elapsedTime / duration, 1);
+                        const currentValue = Math.floor(progress * target);
+                        
+                        counter.textContent = currentValue.toLocaleString();
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        }
+                    };
+
+                    requestAnimationFrame(updateCounter);
+                    observer.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counter.textContent = '0'; // تهيئة القيمة
+            observer.observe(counter);
+        });
+    };
+
+    // تأخير تشغيل العد حتى يتم تحميل كل شيء
+    setTimeout(animateCounters, 500);
 });
